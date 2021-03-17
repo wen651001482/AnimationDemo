@@ -30,17 +30,18 @@ class ViewController: UIViewController {
 		v.frame = CGRect.init(x: 50 , y: 50, width: 150, height: 150)
 		return v
 	}()
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		self.title = "RootVC"
+		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(zPosition))
 		self.v.addGestureRecognizer(tap)
 		
 		self.view.addSubview(self.v)
 		self.view.addSubview(self.greenV)
 		self.view.addSubview(self.redV)
-		
 		
 		caLayer()
 	}
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
 	@objc func zPosition() {
 		self.greenV.layer.zPosition = self.greenV.layer.zPosition == 1.0 ? 0.0 : 1.0
 	}
-	
+
 	func creatTransform() {
 		
 		var transform = CGAffineTransform.identity
@@ -112,3 +113,26 @@ extension ViewController: CALayerDelegate {
 	}
 }
 
+
+extension UIView {
+	open func show(_ vc: UIViewController, sender: Any?) {
+		viewController?.show(vc, sender: sender)
+	}
+
+	open func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+		viewController?.present(viewControllerToPresent, animated: flag, completion: completion)
+	}
+
+	public var viewController: UIViewController? {
+		var next: UIResponder?
+		next = self.next
+		repeat {
+			if let vc = next as? UIViewController {
+				return vc
+			} else {
+				next = next?.next
+			}
+		} while next != nil
+		return nil
+	}
+}
