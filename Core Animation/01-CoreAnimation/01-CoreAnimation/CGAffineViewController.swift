@@ -9,7 +9,7 @@ import UIKit
 
 class CGAffineViewController: UIViewController {
 	
-	public var  transformTypes: TransformTypes = .translation
+	public var transformTypes: TransformTypes = .translation
 	
 	private let tranformView: UIView = {
 		let tranformView:UIView = UIView(frame: CGRect(x: 100, y: 300, width: 100, height: 100))
@@ -55,33 +55,26 @@ class CGAffineViewController: UIViewController {
 				// 组合
 				self.tranformView.transform = CGAffineTransform.init(rotationAngle: 0.5)
 				self.tranformView.transform = self.tranformView.transform.concatenating(CGAffineTransform.init(scaleX: 1.5, y: 1.5))
+				self.tranformView.transform = self.tranformView.transform.concatenating(CGAffineTransform.init(translationX: 100, y: 200))
+			case .three3D:
+				let img = UIImage(named: "home_icon_shanghu")
+				self.tranformView.layer.contents = img?.cgImage
+				self.tranformView.layer.contentsGravity = .resizeAspectFill
+				
+				var transform: CATransform3D = CATransform3DIdentity
+						
+				// 透视效果
+				transform.m34 = -1.0 / 500
+				
+				//rotate by 45 degrees along the Y axis
+				transform = CATransform3DRotate(transform, .pi / 1, 0, 1, 0)
+
+				//apply to layer
+				self.tranformView.layer.transform = transform
+
 			}
 		}) { (completion: Bool) in
 		}
 	}
 	
-}
-
-public enum TransformTypes: String, CaseIterable {
-	case translation
-	case transScale
-	case transRotationAngle
-	case transInverted
-	case transConcatenating
-	
-	var direction: String {
-		switch self {
-		case .translation:
-			return "移动"
-		case .transScale:
-			return "缩放"
-		case .transRotationAngle:
-			return "旋转"
-		case .transInverted:
-			return "反转"
-		case .transConcatenating:
-			return "组合"
-			
-		}
-	}
 }
