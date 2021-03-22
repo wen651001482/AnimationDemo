@@ -35,6 +35,13 @@ class NewCGAnimationVC: UIViewController {
 		return view
 	}()
 	
+	override func loadView() {
+		super.loadView()
+		TransformTypes.height = 222
+		
+		debugPrint("this height \(TransformTypes.height)")
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: pushBtn)

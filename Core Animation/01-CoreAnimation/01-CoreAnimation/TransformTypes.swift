@@ -8,6 +8,8 @@
 import Foundation
 
 public enum TransformTypes: String, CaseIterable {
+	static var height: Float = 100
+	
 	case translation
 	case transScale
 	case transRotationAngle

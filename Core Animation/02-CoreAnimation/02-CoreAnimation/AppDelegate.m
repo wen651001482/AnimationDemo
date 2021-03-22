@@ -6,6 +6,8 @@
 //
 
 #import "AppDelegate.h"
+#import "KNMovieViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,25 +17,34 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	
+	//刚开始肯定是NO. 因为没有保存过YES 放到userDefaults 里面.
+	BOOL isFirstUp =  [[NSUserDefaults standardUserDefaults] objectForKey:@"FirstLoad"];
+	
+	//首先说明一下。 我这里是随便写的一个判断首次进入。下面说明正确写法
+	//1.首先要从服务器获取到版本号
+	//2.然后获取到Xcode设置版本号，把本地版本号上传到服务器。以方便下次比较
+	//3.开始比较。版本号不同就设置启动页面。 这个看具体需求。因为有些app升级之后是不会出现启动页面的。
+	//那是因为别人不需要每次升级都出现引导页。
+	
+	if (!isFirstUp) //如果本地缓存的数值是YES 就代表保存过
+	{
+		//存到本地UserDefaults 里面
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"FirstLoad"];
+		
+		//然后再跳转到播放视频的画面
+		KNMovieViewController *KNVC = [[KNMovieViewController alloc]init];
+		// 1、获取媒体资源地址
+		NSString *path =  [[NSBundle mainBundle] pathForResource:@"movie.mp4" ofType:nil];
+		KNVC.movieURL = [NSURL fileURLWithPath:path];
+		self.window.rootViewController = KNVC;
+	}else{
+		//不是首次启动
+		ViewController *rootTabCtrl = [[ViewController alloc]init];
+		self.window.rootViewController = rootTabCtrl;
+	}
+	
 	return YES;
-}
-
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-	// Called when a new scene session is being created.
-	// Use this method to select a configuration to create the new scene with.
-	return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-	// Called when the user discards a scene session.
-	// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-	// Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
 

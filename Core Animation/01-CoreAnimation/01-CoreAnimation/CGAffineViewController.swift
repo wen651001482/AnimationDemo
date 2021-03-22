@@ -52,8 +52,7 @@ class CGAffineViewController: UIViewController {
 				self.tranformView.transform = CGAffineTransform.init(translationX: 0, y: 200)
 				self.tranformView.transform  = self.tranformView.transform.inverted()
 			case .transConcatenating:
-				// 组合
-				self.tranformView.transform = CGAffineTransform.init(rotationAngle: 0.5)
+				// 组合u7m.init(rotationAngle: 0.5)
 				self.tranformView.transform = self.tranformView.transform.concatenating(CGAffineTransform.init(scaleX: 1.5, y: 1.5))
 				self.tranformView.transform = self.tranformView.transform.concatenating(CGAffineTransform.init(translationX: 100, y: 200))
 			case .three3D:

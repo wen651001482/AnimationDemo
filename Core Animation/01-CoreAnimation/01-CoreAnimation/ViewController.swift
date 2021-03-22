@@ -31,10 +31,22 @@ class ViewController: UIViewController {
 		return v
 	}()
 	
+	private lazy var pushBtn: UIButton = {
+		let btn = UIButton()
+		btn.setTitle("push", for: .normal)
+		btn.frame = CGRect.init(x: 0, y: 0, width: 100, height: 50)
+		btn.layer.cornerRadius = 5
+		btn.backgroundColor = UIColor.green.withAlphaComponent(0.7)
+		btn.addTarget(self, action: #selector(pushController), for: .touchUpInside)
+		return btn
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		self.view.backgroundColor = UIColor.white
 		self.title = "RootVC"
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: pushBtn)
 		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(zPosition))
 		self.v.addGestureRecognizer(tap)
@@ -64,6 +76,10 @@ class ViewController: UIViewController {
 	/// zPosition 改变视图层级
 	@objc func zPosition() {
 		self.greenV.layer.zPosition = self.greenV.layer.zPosition == 1.0 ? 0.0 : 1.0
+	}
+	
+	@objc func pushController() {
+		self.show(NewTestVC(), sender: nil)
 	}
 
 	func creatTransform() {

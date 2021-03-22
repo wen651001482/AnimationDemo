@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE8C294626030311005FD41A /* NewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C294526030311005FD41A /* NewTestVC.swift */; };
 		AE9DBF752601AB0F0088B45C /* CGAffineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DBF742601AB0F0088B45C /* CGAffineViewController.swift */; };
 		AE9DBF782601ACDC0088B45C /* NewCGAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DBF772601ACDC0088B45C /* NewCGAnimationVC.swift */; };
 		AE9DBF7C2601F6220088B45C /* TransformTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DBF7B2601F6220088B45C /* TransformTypes.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE8C294526030311005FD41A /* NewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestVC.swift; sourceTree = "<group>"; };
 		AE9DBF742601AB0F0088B45C /* CGAffineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGAffineViewController.swift; sourceTree = "<group>"; };
 		AE9DBF772601ACDC0088B45C /* NewCGAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewCGAnimationVC.swift; path = Assets.xcassets/NewCGAnimationVC.swift; sourceTree = "<group>"; };
 		AE9DBF7B2601F6220088B45C /* TransformTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTypes.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				AEEDB10F26009728007DB5B2 /* AppDelegate.swift */,
 				AEEDB11326009728007DB5B2 /* ViewController.swift */,
 				AE9DBF772601ACDC0088B45C /* NewCGAnimationVC.swift */,
+				AE8C294526030311005FD41A /* NewTestVC.swift */,
 				AE9DBF742601AB0F0088B45C /* CGAffineViewController.swift */,
 				AE9DBF7B2601F6220088B45C /* TransformTypes.swift */,
 				AEEDB11526009728007DB5B2 /* Main.storyboard */,
@@ -146,6 +149,7 @@
 				AE9DBF7C2601F6220088B45C /* TransformTypes.swift in Sources */,
 				AEEDB11426009728007DB5B2 /* ViewController.swift in Sources */,
 				AE9DBF752601AB0F0088B45C /* CGAffineViewController.swift in Sources */,
+				AE8C294626030311005FD41A /* NewTestVC.swift in Sources */,
 				AEEDB11026009728007DB5B2 /* AppDelegate.swift in Sources */,
 				AE9DBF782601ACDC0088B45C /* NewCGAnimationVC.swift in Sources */,
 			);

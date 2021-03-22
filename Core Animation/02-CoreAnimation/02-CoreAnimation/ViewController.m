@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	[self.view setBackgroundColor: UIColor.whiteColor];
 	
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(beginAnimation)];
 	
