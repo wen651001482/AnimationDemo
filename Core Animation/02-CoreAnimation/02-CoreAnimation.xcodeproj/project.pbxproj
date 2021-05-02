@@ -15,6 +15,7 @@
 		AE9DBF67260199310088B45C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9DBF66260199310088B45C /* Assets.xcassets */; };
 		AE9DBF6A260199310088B45C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9DBF68260199310088B45C /* LaunchScreen.storyboard */; };
 		AE9DBF6D260199310088B45C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9DBF6C260199310088B45C /* main.m */; };
+		CE701FDD262DDCF7006AB188 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE701FDC262DDCF7006AB188 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		AE9DBF69260199310088B45C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9DBF6B260199310088B45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9DBF6C260199310088B45C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE701FDB262DDCF7006AB188 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		CE701FDC262DDCF7006AB188 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				AE9DBF612601992E0088B45C /* ViewController.m */,
 				AE8C293C2602F397005FD41A /* KNMovieViewController.h */,
 				AE8C293D2602F397005FD41A /* KNMovieViewController.m */,
+				CE701FDB262DDCF7006AB188 /* TestViewController.h */,
+				CE701FDC262DDCF7006AB188 /* TestViewController.m */,
 				AE9DBF632601992E0088B45C /* Main.storyboard */,
 				AE9DBF66260199310088B45C /* Assets.xcassets */,
 				AE9DBF68260199310088B45C /* LaunchScreen.storyboard */,
@@ -153,6 +158,7 @@
 				AE9DBF5C2601992E0088B45C /* AppDelegate.m in Sources */,
 				AE8C293E2602F397005FD41A /* KNMovieViewController.m in Sources */,
 				AE9DBF6D260199310088B45C /* main.m in Sources */,
+				CE701FDD262DDCF7006AB188 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
